@@ -13,6 +13,7 @@ Workflow otomatis akan:
 
 ## 📂 Struktur Folder
 
+```
 Workflow-CI/
 ├── .github/
 │ └── workflows/
@@ -26,6 +27,8 @@ Workflow-CI/
 ├── conda.yaml # Environment MLflow
 ├── modelling.py # Script training & evaluasi model
 └── README.md # Dokumentasi proyek
+
+```
 
 ## ⚙️ Cara Menjalankan
 
