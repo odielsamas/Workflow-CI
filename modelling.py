@@ -8,7 +8,6 @@ TRAIN_PATH  = "developer_burnout_preprocessing/train.csv"
 TEST_PATH   = "developer_burnout_preprocessing/test.csv"
 TARGET      = "burnout_level"
 EXPERIMENT  = "developer-burnout-modelling"
-MLFLOW_URI  = "http://127.0.0.1:5000"
 ARTIFACT_DIR = "artifacts"
 
 
@@ -34,7 +33,6 @@ def evaluate(y_true, y_pred) -> dict:
 def run():
     X_train, X_test, y_train, y_test = load_data()
 
-    mlflow.set_tracking_uri(MLFLOW_URI)
     mlflow.set_experiment(EXPERIMENT)
     mlflow.sklearn.autolog(log_model_signatures=True, log_input_examples=True)
 
