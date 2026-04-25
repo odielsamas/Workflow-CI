@@ -1,9 +1,7 @@
-name: developer-burnout-project
-
+name: burnout-prediction
 conda_env: conda.yaml
-
 entry_points:
   main:
     parameters:
-      data_path: {type: str, default: "developer_burnout_preprocessing/train.csv"}
-    command: "python modelling.py --data_path {data_path}"
+      data: { type: str, default: developer_burnout_raw/developer_burnout.csv }
+    command: "python modelling.py --data {data}"
