@@ -21,14 +21,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mlflow==2.19.0 scikit-learn pandas matplotlib seaborn
+          pip install mlflow==2.19.0 scikit-learn pandas matplotlib seaborn joblib
 
-      - name: Run modelling.py
+      - name: Run MLflow Project
         run: |
-          python modelling.py
+          mlflow run MLProject
 
-      - name: Upload artifacts
+      - name: Upload model artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mlflow-artifacts
-          path: developer_burnout_preprocessing/
+          name: model-artifacts
+          path: mlruns/**/artifacts/model/
