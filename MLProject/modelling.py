@@ -7,8 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 # Path dataset 
-TRAIN_PATH  = "../developer_burnout_preprocessing/train.csv"
-TEST_PATH   = "../developer_burnout_preprocessing/test.csv"
+TRAIN_PATH  = "developer_burnout_preprocessing/train.csv"
+TEST_PATH   = "developer_burnout_preprocessing/test.csv"
 TARGET      = "burnout_level"
 
 # Nama experiment MLflow
