@@ -4,6 +4,4 @@ conda_env: conda.yaml
 
 entry_points:
   main:
-    parameters:
-      data: { type: path }
-    command: "python modelling.py --data developer_burnout_preprocessing/train.csv"
+    command: "python modelling.py"
