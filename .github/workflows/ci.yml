@@ -1,4 +1,4 @@
-name: MLflow CI
+name: CI-MLProject
 
 on:
   push:
@@ -9,7 +9,6 @@ on:
 jobs:
   train:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -17,18 +16,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           pip install mlflow==2.19.0 scikit-learn pandas matplotlib seaborn joblib
 
-      - name: Run modelling.py
+      - name: Run MLflow Project
         run: |
-          python MLProject/modelling.py
+          mlflow run MLProject --env-manager=local
 
       - name: Upload model artifact
         uses: actions/upload-artifact@v4
         with:
           name: model-artifacts
-          path: mlruns/**/artifacts/model/
+          path: MLProject/artifacts/
